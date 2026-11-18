@@ -19,7 +19,6 @@ export const DhammachakraMotif: React.FC<MotifProps> = ({ className = 'w-10 h-10
     <circle cx="32" cy="32" r="24" stroke="currentColor" strokeWidth="1.15" />
     <circle cx="32" cy="32" r="19" stroke="currentColor" strokeWidth="0.75" strokeOpacity="0.65" />
     <circle cx="32" cy="32" r="5" stroke="currentColor" strokeWidth="1.15" />
-    {/* 8 Noble Spokes */}
     <line x1="32" y1="5" x2="32" y2="27" stroke="currentColor" strokeWidth="1" />
     <line x1="32" y1="37" x2="32" y2="59" stroke="currentColor" strokeWidth="1" />
     <line x1="5" y1="32" x2="27" y2="32" stroke="currentColor" strokeWidth="1" />
@@ -28,7 +27,6 @@ export const DhammachakraMotif: React.FC<MotifProps> = ({ className = 'w-10 h-10
     <line x1="35.54" y1="35.54" x2="51.1" y2="51.1" stroke="currentColor" strokeWidth="1" />
     <line x1="51.1" y1="12.9" x2="35.54" y2="28.46" stroke="currentColor" strokeWidth="1" />
     <line x1="28.46" y1="35.54" x2="12.9" y2="51.1" stroke="currentColor" strokeWidth="1" />
-    {/* Cardinal Finials */}
     <circle cx="32" cy="4.5" r="1.4" fill="currentColor" />
     <circle cx="32" cy="59.5" r="1.4" fill="currentColor" />
     <circle cx="4.5" cy="32" r="1.4" fill="currentColor" />

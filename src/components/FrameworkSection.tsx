@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import {
+  BUDDHA_FRAMEWORK_BG,
   CORE_EXPERIENCE_THEMES,
   FRAMEWORK_STAGES,
   type FrameworkStage,
@@ -8,31 +9,53 @@ import { DhammachakraMotif } from './Motifs';
 
 export const FrameworkSection: React.FC = () => {
   const [activeId, setActiveId] = useState<FrameworkStage['id']>('healing');
+  const [bgError, setBgError] = useState(false);
   const activeStage =
     FRAMEWORK_STAGES.find((stage) => stage.id === activeId) ?? FRAMEWORK_STAGES[0];
 
   return (
     <section
       aria-label="Core Transformation Framework"
-      className="bg-[#FEF2EB] py-20 text-[#252525] sm:py-28"
+      className="bg-[#FEF2EB] pb-20 text-[#252525] sm:pb-28"
     >
-      <div className="mx-auto max-w-5xl px-5 sm:px-6 lg:px-8">
-        {/* Section Heading */}
-        <div className="mx-auto max-w-2xl text-center">
-          <p className="text-xs font-semibold tracking-[0.22em] text-[#B35906] uppercase">
+      {/* Full-clarity Golden Meditating Buddha Header Band */}
+      <div className="relative overflow-hidden bg-[#032453] text-[#FEF2EB]">
+        {!bgError ? (
+          <div aria-hidden="true" className="pointer-events-none absolute inset-0">
+            <img
+              src={BUDDHA_FRAMEWORK_BG}
+              alt="Serene meditating Gautama Buddha illuminated in warm golden light"
+              referrerPolicy="no-referrer"
+              onError={() => setBgError(true)}
+              className="h-full w-full object-cover object-[50%_22%]"
+            />
+            {/* Scrim concentrated only at the bottom edge so Buddha's face, eyes, smile, and hands remain crystal clear */}
+            <div className="absolute inset-0 bg-gradient-to-t from-[#032453]/95 via-[#032453]/30 to-transparent" />
+          </div>
+        ) : (
+          <div
+            aria-hidden="true"
+            className="pointer-events-none absolute inset-0 bg-[radial-gradient(ellipse_75%_65%_at_50%_30%,rgba(199,154,80,0.22),#032453_75%)]"
+          />
+        )}
+
+        <div className="relative mx-auto max-w-4xl px-5 pt-56 pb-12 text-center sm:px-6 sm:pt-72 sm:pb-14 lg:px-8">
+          <p className="text-xs font-semibold tracking-[0.22em] text-[#E8C7A5] uppercase drop-shadow-[0_2px_6px_rgba(0,0,0,0.65)]">
             The Core Framework
           </p>
-          <h2 className="mt-3 font-serif text-[clamp(2rem,4vw,3.15rem)] font-semibold leading-[1.15] text-[#032453]">
+          <h2 className="mt-3 font-serif text-[clamp(2rem,4vw,3.15rem)] font-semibold leading-[1.15] text-[#FEF2EB] drop-shadow-[0_2px_10px_rgba(0,0,0,0.7)]">
             Healing. Believing. Rising.
           </h2>
-          <p className="mt-4 text-base leading-relaxed text-[#252525]/80 sm:text-lg">
+          <p className="mx-auto mt-4 max-w-2xl text-base leading-relaxed text-[#FEF2EB]/95 drop-shadow-[0_2px_8px_rgba(0,0,0,0.7)] sm:text-lg">
             Three deliberate stages designed to move you from quiet inner reflection to
             grounded self-belief and an actionable vision for 2027.
           </p>
         </div>
+      </div>
 
-        {/* Interactive 3-Pillar Segmented Selector */}
-        <div className="mt-12">
+      {/* Interactive 3-Pillar Buttons & Detail Panel on Warm Ivory */}
+      <div className="mx-auto max-w-5xl px-5 pt-12 sm:px-6 sm:pt-14 lg:px-8">
+        <div>
           <div
             role="tablist"
             aria-label="Framework stages"

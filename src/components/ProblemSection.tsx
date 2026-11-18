@@ -74,7 +74,7 @@ export const ProblemSection: React.FC = () => {
           </p>
         </div>
 
-        {/* Highlighted Core Statement (subtle all-around hairline gold border, no thick left bar) */}
+        {/* Highlighted Core Statement */}
         <div className="mx-auto mt-12 max-w-3xl rounded-xl border border-[#C79A50]/45 bg-[#FEF2EB]/[0.04] px-6 py-8 text-center sm:px-10 sm:py-10">
           <div className="mx-auto mb-5 max-w-xs text-[#C79A50]">
             <StupaHorizonDivider className="h-6 w-full" />

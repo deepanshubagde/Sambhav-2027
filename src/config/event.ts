@@ -5,10 +5,14 @@
  * or Payment Link URL. Every primary CTA button on the landing page uses
  * this single constant.
  */
+import buddhaGoldenImg from '../assets/images/buddha_golden_meditation_1795042248377.jpg';
+
 export const RAZORPAY_PAYMENT_LINK = 'https://rzp.io/l/sambhav-2027';
 
 export const EVENT_BANNER_SRC =
   '/assets/aistudio/Sambhav_2027__A_Guided_Journey_5822a75f.png';
+
+export const BUDDHA_FRAMEWORK_BG = buddhaGoldenImg;
 
 export const EVENT_DETAILS = {
   brand: 'Monkhood Club',
