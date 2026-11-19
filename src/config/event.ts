@@ -31,6 +31,7 @@ export const EVENT_DETAILS = {
   journeyTagline: 'A Journey of Healing, Believing and Rising.',
   date: '12 December 2026',
   shortDate: '12 Dec 2026',
+  timings: '10:00 AM to 5:00 PM',
   locationShort: 'Nagpur',
   locationFull: 'Nagpur, Maharashtra, India',
   venueNote:

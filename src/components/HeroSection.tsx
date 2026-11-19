@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { ArrowRight, Calendar, ClipboardCheck, MapPin } from 'lucide-react';
+import { ArrowRight, Calendar, ClipboardCheck, Clock, MapPin } from 'lucide-react';
 import {
   APPLICATION_FORM_LINK,
   EVENT_BANNER_SRC,
@@ -83,6 +83,13 @@ export const HeroSection: React.FC = () => {
             <span className="inline-flex items-center gap-2 font-medium whitespace-nowrap">
               <MapPin className="h-4 w-4 text-[#B35906]" aria-hidden="true" />
               <span>{EVENT_DETAILS.locationShort}</span>
+            </span>
+            <span className="hidden text-[#C79A50] sm:inline" aria-hidden="true">
+              ·
+            </span>
+            <span className="inline-flex items-center gap-2 font-medium whitespace-nowrap">
+              <Clock className="h-4 w-4 text-[#B35906]" aria-hidden="true" />
+              <span className="tabular-nums">{EVENT_DETAILS.timings}</span>
             </span>
             <span className="hidden text-[#C79A50] sm:inline" aria-hidden="true">
               ·

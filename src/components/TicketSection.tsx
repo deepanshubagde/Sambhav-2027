@@ -1,5 +1,5 @@
 import React from 'react';
-import { ArrowRight, Calendar, MapPin, ShieldCheck, Users } from 'lucide-react';
+import { ArrowRight, Calendar, Clock, MapPin, ShieldCheck, Users } from 'lucide-react';
 import { APPLICATION_FORM_LINK, EVENT_DETAILS } from '../config/event';
 import { DhammachakraMotif } from './Motifs';
 
@@ -71,6 +71,16 @@ export const TicketSection: React.FC = () => {
                 <span className="mt-0.5 block text-xs text-[#252525]/70">
                   {EVENT_DETAILS.venueNote}
                 </span>
+              </dd>
+            </div>
+
+            <div className="flex flex-col justify-between gap-1 py-3.5 sm:flex-row sm:items-center">
+              <dt className="inline-flex items-center gap-2.5 font-medium text-[#032453]/75">
+                <Clock className="h-4 w-4 shrink-0 text-[#B35906]" aria-hidden="true" />
+                <span>Timings</span>
+              </dt>
+              <dd className="font-semibold text-[#032453] tabular-nums">
+                {EVENT_DETAILS.timings}
               </dd>
             </div>
 
