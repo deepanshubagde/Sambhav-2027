@@ -1,9 +1,9 @@
 import React, { useState } from 'react';
-import { ArrowRight, Calendar, MapPin, Ticket } from 'lucide-react';
+import { ArrowRight, Calendar, ClipboardCheck, MapPin } from 'lucide-react';
 import {
+  APPLICATION_FORM_LINK,
   EVENT_BANNER_SRC,
   EVENT_DETAILS,
-  RAZORPAY_PAYMENT_LINK,
 } from '../config/event';
 import { DhammachakraMotif } from './Motifs';
 
@@ -44,6 +44,12 @@ export const HeroSection: React.FC = () => {
             <span className="h-px w-6 bg-[#C79A50]" aria-hidden="true" />
           </p>
 
+          <div className="mt-3.5">
+            <span className="inline-block rounded-sm border border-[#C79A50] bg-[#032453] px-4 py-1.5 text-xs font-semibold tracking-[0.2em] text-[#FEF2EB] uppercase shadow-[0_8px_20px_-8px_rgba(3,36,83,0.45)] sm:text-[13px]">
+              Offline 1 Day Retreat
+            </span>
+          </div>
+
           <div className="mt-4">
             <p className="font-serif text-3xl font-semibold tracking-tight text-[#032453] sm:text-4xl">
               {EVENT_DETAILS.shortTitle}
@@ -57,12 +63,15 @@ export const HeroSection: React.FC = () => {
             {EVENT_DETAILS.journeyTagline}
           </p>
 
-          {/* Main Conversion Headline */}
+          {/* Main Conversion Headline & Subheading */}
           <h1 className="mt-6 font-serif text-[clamp(2.15rem,4.4vw,3.6rem)] font-semibold leading-[1.12] tracking-tight text-[#032453]">
-            Your Dream Life Doesn&apos;t Begin in 2027. It Begins With the Decisions You Make Today.
+            Don&apos;t Enter 2027 With the Same Mindset That&apos;s Been Holding You Back.
           </h1>
+          <p className="mx-auto mt-4 max-w-2xl text-base font-medium leading-relaxed text-[#252525]/90 sm:text-lg">
+            Release Your Inner Blockers. Manifest the Life You Desire Through the Timeless Wisdom of Buddha.
+          </p>
 
-          {/* Above-the-fold Event Info Strip (ensures ₹999 is visible immediately) */}
+          {/* Above-the-fold Event Info Strip */}
           <div className="mt-7 flex flex-wrap items-center justify-center gap-x-5 gap-y-2 border-y border-[#C79A50]/35 py-3 text-sm text-[#032453]">
             <span className="inline-flex items-center gap-2 font-medium whitespace-nowrap">
               <Calendar className="h-4 w-4 text-[#B35906]" aria-hidden="true" />
@@ -78,35 +87,39 @@ export const HeroSection: React.FC = () => {
             <span className="hidden text-[#C79A50] sm:inline" aria-hidden="true">
               ·
             </span>
-            <span className="inline-flex items-center gap-2 font-semibold whitespace-nowrap">
-              <Ticket className="h-4 w-4 text-[#B35906]" aria-hidden="true" />
-              <span className="tabular-nums">Entry: {EVENT_DETAILS.priceDisplay}</span>
+            <span className="inline-flex items-center gap-1.5 font-semibold whitespace-nowrap">
+              <ClipboardCheck className="h-4 w-4 text-[#B35906]" aria-hidden="true" />
+              <span>Entry: {EVENT_DETAILS.entryMode}</span>
             </span>
-            <span className="hidden text-[#C79A50] md:inline" aria-hidden="true">
-              ·
+          </div>
+
+          <div className="mt-5">
+            <span className="inline-flex items-center gap-2 rounded-sm border border-[#991B1B] bg-[#DC2626] px-4 py-1.5 text-[11px] font-bold tracking-[0.22em] text-white uppercase shadow-[0_6px_18px_-6px_rgba(220,38,38,0.55)] sm:text-xs">
+              <span
+                aria-hidden="true"
+                className="h-1.5 w-1.5 rounded-full bg-white animate-pulse"
+              />
+              Limited Seats
             </span>
-            <a
-              href={RAZORPAY_PAYMENT_LINK}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="inline-flex items-center gap-1.5 font-semibold text-[#B35906] underline decoration-[#C79A50] underline-offset-4 transition-colors duration-200 hover:text-[#032453] focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#032453] whitespace-nowrap"
-            >
-              <span>Book ₹999 Ticket</span>
-              <ArrowRight className="h-3.5 w-3.5" aria-hidden="true" />
-            </a>
           </div>
         </div>
 
-        {/* Prominent 16:9 Approved SAMBHAV 2027 Banner */}
-        <div className="mt-8 sm:mt-10">
-          <div className="relative mx-auto aspect-video w-full overflow-hidden rounded-xl border border-[#C79A50]/50 bg-[#FDF0F1] shadow-[0_24px_60px_-18px_rgba(3,36,83,0.18)]">
+        {/* Prominent 16:9 Approved SAMBHAV 2027 Banner (Clickable to Application Form) */}
+        <div className="mt-6 sm:mt-8">
+          <a
+            href={APPLICATION_FORM_LINK}
+            target="_blank"
+            rel="noopener noreferrer"
+            aria-label="Apply for SAMBHAV 2027 — Open application form"
+            className="group relative mx-auto block aspect-video w-full cursor-pointer overflow-hidden rounded-xl border border-[#C79A50]/50 bg-[#FDF0F1] shadow-[0_24px_60px_-18px_rgba(3,36,83,0.18)] touch-manipulation transition-all duration-300 hover:border-[#C79A50] hover:shadow-[0_28px_68px_-16px_rgba(3,36,83,0.26)] active:scale-[0.99] focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-[#DC7310]"
+          >
             {!imageError ? (
               <img
                 src={EVENT_BANNER_SRC}
                 alt="SAMBHAV 2027 — A Guided Journey to Design, Manifest and Achieve Your Dream Life in 2027 featuring Manifestation Coach Rahul Dongre and Mental Wellness Coach Deepanshu Bagde"
                 referrerPolicy="no-referrer"
                 onError={() => setImageError(true)}
-                className="h-full w-full object-contain"
+                className="h-full w-full object-contain transition-transform duration-300 group-hover:scale-[1.015]"
               />
             ) : (
               <div className="flex h-full w-full flex-col items-center justify-center bg-gradient-to-br from-[#FEF2EB] via-[#FDF0F1] to-[#E8C7A5]/50 p-6 text-center">
@@ -119,21 +132,19 @@ export const HeroSection: React.FC = () => {
                 </p>
               </div>
             )}
-          </div>
+          </a>
         </div>
 
         {/* Supporting Narrative, 3 Pillars & Primary CTA */}
         <div className="mx-auto mt-10 max-w-3xl text-center">
           <div className="space-y-4 text-base leading-relaxed text-[#252525]/90 sm:text-lg">
             <p>
-              What if 2027 could become the year you finally move beyond your limitations,
-              gain clarity about what you truly want and start taking meaningful steps
-              towards the life you&apos;ve always imagined?
+              What if 2027 became the year you broke your limitations, discovered your true
+              potential and started creating the life you desire?
             </p>
             <p>
-              SAMBHAV is an immersive offline transformation experience designed to help
-              you reconnect with your potential, reshape your beliefs and create a clear
-              vision for the year ahead.
+              SAMBHAV is an immersive offline experience to transform your mindset, strengthen
+              self-belief and create your vision for 2027.
             </p>
           </div>
 
@@ -152,20 +163,20 @@ export const HeroSection: React.FC = () => {
             ))}
           </div>
 
-          {/* Event Information Strip + Primary CTA */}
+          {/* Primary CTA */}
           <div className="mt-10 flex flex-col items-center">
             <a
-              href={RAZORPAY_PAYMENT_LINK}
+              href={APPLICATION_FORM_LINK}
               target="_blank"
               rel="noopener noreferrer"
-              className="inline-flex min-h-[52px] items-center justify-center gap-3 rounded-lg bg-[#032453] px-7 py-4 text-center text-sm font-semibold tracking-[0.06em] text-[#FEF2EB] shadow-[0_12px_30px_-8px_rgba(3,36,83,0.45)] transition-all duration-200 hover:-translate-y-0.5 hover:bg-[#04306e] focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-[#DC7310] sm:px-9 sm:text-base"
+              className="cta-float-btn inline-flex min-h-[52px] items-center justify-center gap-3 rounded-lg bg-[#032453] px-7 py-4 text-center text-sm font-semibold tracking-[0.06em] text-[#FEF2EB] shadow-[0_14px_34px_-8px_rgba(3,36,83,0.5)] transition-colors duration-200 hover:bg-[#04306e] active:scale-[0.98] focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-[#DC7310] sm:px-9 sm:text-base"
             >
               <span>I&apos;M READY FOR MY 2027 TRANSFORMATION</span>
-              <ArrowRight className="h-4 w-4 shrink-0 text-[#E8C7A5]" aria-hidden="true" />
+              <ArrowRight className="cta-arrow-glide h-4 w-4 shrink-0 text-[#E8C7A5]" aria-hidden="true" />
             </a>
 
             <p className="mt-4 text-sm font-medium text-[#032453]/80">
-              A limited-capacity, in-person experience. {EVENT_DETAILS.capacityDisplay}.
+              An intimate, in-person experience. {EVENT_DETAILS.capacityDisplay}.
             </p>
           </div>
         </div>

@@ -1,13 +1,13 @@
 import React from 'react';
 import { ArrowRight, Calendar, MapPin, ShieldCheck, Users } from 'lucide-react';
-import { EVENT_DETAILS, RAZORPAY_PAYMENT_LINK } from '../config/event';
+import { APPLICATION_FORM_LINK, EVENT_DETAILS } from '../config/event';
 import { DhammachakraMotif } from './Motifs';
 
 export const TicketSection: React.FC = () => {
   return (
     <section
-      id="register"
-      aria-label="Event Registration and Ticket"
+      id="apply"
+      aria-label="Apply for SAMBHAV 2027"
       className="relative overflow-hidden bg-[#032453] py-20 text-[#FEF2EB] sm:py-28"
     >
       {/* Warm sunrise horizon accent behind card */}
@@ -34,16 +34,16 @@ export const TicketSection: React.FC = () => {
             </p>
           </div>
 
-          {/* Ticket Price Highlight */}
+          {/* Application-Based Entry Highlight */}
           <div className="mt-8 border-y border-[#C79A50]/35 py-6 text-center">
             <p className="text-xs font-semibold tracking-[0.2em] text-[#032453]/70 uppercase">
-              Participant Entry Pass
+              Entry Mode
             </p>
-            <p className="mt-2 font-serif text-5xl font-semibold tracking-tight text-[#032453] tabular-nums sm:text-6xl">
-              {EVENT_DETAILS.priceDisplay}
+            <p className="mt-2 font-serif text-4xl font-semibold tracking-tight text-[#032453] sm:text-5xl">
+              {EVENT_DETAILS.entryMode}
             </p>
-            <p className="mt-1 text-sm font-medium text-[#252525]/75">
-              Per participant · {EVENT_DETAILS.formatDisplay}
+            <p className="mt-2 text-sm font-medium text-[#252525]/75">
+              {EVENT_DETAILS.entrySubtext}
             </p>
           </div>
 
@@ -77,24 +77,24 @@ export const TicketSection: React.FC = () => {
             <div className="flex flex-col justify-between gap-1 py-3.5 sm:flex-row sm:items-center">
               <dt className="inline-flex items-center gap-2.5 font-medium text-[#032453]/75">
                 <Users className="h-4 w-4 shrink-0 text-[#B35906]" aria-hidden="true" />
-                <span>Capacity</span>
+                <span>Seats</span>
               </dt>
-              <dd className="font-semibold text-[#032453] tabular-nums">
+              <dd className="font-semibold text-[#032453]">
                 {EVENT_DETAILS.capacityDisplay}
               </dd>
             </div>
           </dl>
 
-          {/* Primary Conversion CTA */}
+          {/* Primary Application CTA */}
           <div className="mt-9 flex flex-col items-center">
             <a
-              href={RAZORPAY_PAYMENT_LINK}
+              href={APPLICATION_FORM_LINK}
               target="_blank"
               rel="noopener noreferrer"
-              className="inline-flex min-h-[54px] w-full items-center justify-center gap-3 rounded-lg bg-[#032453] px-6 py-4 text-center text-sm font-semibold tracking-[0.06em] text-[#FEF2EB] shadow-[0_14px_32px_-10px_rgba(3,36,83,0.45)] transition-all duration-200 hover:-translate-y-0.5 hover:bg-[#04306e] focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-[#DC7310] sm:text-base"
+              className="cta-float-btn inline-flex min-h-[54px] w-full items-center justify-center gap-3 rounded-lg bg-[#032453] px-6 py-4 text-center text-sm font-semibold tracking-[0.1em] text-[#FEF2EB] uppercase shadow-[0_14px_32px_-10px_rgba(3,36,83,0.45)] transition-colors duration-200 hover:bg-[#04306e] active:scale-[0.98] focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-[#DC7310] sm:text-base"
             >
-              <span>I&apos;M READY FOR MY 2027 TRANSFORMATION</span>
-              <ArrowRight className="h-4 w-4 shrink-0 text-[#E8C7A5]" aria-hidden="true" />
+              <span>Apply Now</span>
+              <ArrowRight className="cta-arrow-glide h-4 w-4 shrink-0 text-[#E8C7A5]" aria-hidden="true" />
             </a>
 
             <p className="mt-4 inline-flex items-center gap-2 text-center text-xs text-[#252525]/75">
@@ -103,8 +103,8 @@ export const TicketSection: React.FC = () => {
                 aria-hidden="true"
               />
               <span>
-                Proceeds securely to Razorpay checkout ({EVENT_DETAILS.priceDisplay}).
-                Exact venue details are shared with registered participants.
+                Participation is selection-based. Selected applicants will be contacted
+                personally with further details.
               </span>
             </p>
           </div>

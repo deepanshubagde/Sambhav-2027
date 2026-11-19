@@ -2,9 +2,13 @@ import { HeroSection } from './components/HeroSection';
 import { ProblemSection } from './components/ProblemSection';
 import { IntroducingSection } from './components/IntroducingSection';
 import { FrameworkSection } from './components/FrameworkSection';
+import { WhatYouGetSection } from './components/WhatYouGetSection';
+import { SessionInclusionsSection } from './components/SessionInclusionsSection';
 import { CoachesSection } from './components/CoachesSection';
 import { TicketSection } from './components/TicketSection';
+import { FaqSection } from './components/FaqSection';
 import { MobileStickyCta } from './components/MobileStickyCta';
+import { ApplicationToastPopup } from './components/ApplicationToastPopup';
 
 export default function App() {
   return (
@@ -14,9 +18,13 @@ export default function App() {
         <ProblemSection />
         <IntroducingSection />
         <FrameworkSection />
+        <WhatYouGetSection />
+        <SessionInclusionsSection />
         <CoachesSection />
         <TicketSection />
+        <FaqSection />
       </main>
+      <ApplicationToastPopup />
       <MobileStickyCta />
     </div>
   );

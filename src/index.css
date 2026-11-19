@@ -27,8 +27,79 @@
   }
 }
 
+@keyframes ctaFloatNudge {
+  0%, 100% {
+    transform: translate3d(0, 0, 0);
+  }
+  25% {
+    transform: translate3d(0, -4px, 0);
+  }
+  50% {
+    transform: translate3d(4px, 0, 0);
+  }
+  75% {
+    transform: translate3d(-4px, -2px, 0);
+  }
+}
+
+@keyframes ctaStickyNudge {
+  0%, 100% {
+    transform: translate3d(0, 0, 0);
+  }
+  30% {
+    transform: translate3d(-3px, -2px, 0);
+  }
+  65% {
+    transform: translate3d(3px, 0, 0);
+  }
+}
+
+@keyframes ctaArrowGlide {
+  0%, 100% {
+    transform: translate3d(0, 0, 0);
+  }
+  50% {
+    transform: translate3d(4px, 0, 0);
+  }
+}
+
+.cta-float-btn {
+  animation: ctaFloatNudge 2.8s ease-in-out infinite;
+  will-change: transform;
+  touch-action: manipulation;
+  -webkit-tap-highlight-color: transparent;
+}
+
+.cta-float-btn:hover,
+.cta-float-btn:focus-visible {
+  animation-play-state: paused;
+}
+
+.cta-sticky-btn {
+  animation: ctaStickyNudge 2.4s ease-in-out infinite;
+  will-change: transform;
+  touch-action: manipulation;
+  -webkit-tap-highlight-color: transparent;
+}
+
+.cta-sticky-btn:hover,
+.cta-sticky-btn:focus-visible {
+  animation-play-state: paused;
+}
+
+.cta-arrow-glide {
+  animation: ctaArrowGlide 1.6s ease-in-out infinite;
+  will-change: transform;
+}
+
 @media (prefers-reduced-motion: reduce) {
   html {
     scroll-behavior: auto;
+  }
+
+  .cta-float-btn,
+  .cta-sticky-btn,
+  .cta-arrow-glide {
+    animation: none;
   }
 }

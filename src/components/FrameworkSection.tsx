@@ -146,17 +146,24 @@ export const FrameworkSection: React.FC = () => {
           </div>
 
           <div className="mt-8 grid grid-cols-1 gap-x-10 gap-y-0 divide-y divide-[#C79A50]/25 border-y border-[#C79A50]/25 sm:grid-cols-2">
-            {CORE_EXPERIENCE_THEMES.map((theme, index) => (
-              <div
-                key={theme}
-                className="flex items-baseline gap-4 py-4 text-base text-[#252525]/90"
-              >
-                <span className="text-xs font-semibold text-[#B35906] tabular-nums">
-                  {String(index + 1).padStart(2, '0')}
-                </span>
-                <span className="font-medium text-[#032453]">{theme}</span>
-              </div>
-            ))}
+            {CORE_EXPERIENCE_THEMES.map((theme, index) => {
+              const isOddLastItem =
+                CORE_EXPERIENCE_THEMES.length % 2 === 1 &&
+                index === CORE_EXPERIENCE_THEMES.length - 1;
+              return (
+                <div
+                  key={theme}
+                  className={`flex items-baseline gap-4 py-4 text-base text-[#252525]/90 ${
+                    isOddLastItem ? 'sm:col-span-2' : ''
+                  }`}
+                >
+                  <span className="text-xs font-semibold text-[#B35906] tabular-nums">
+                    {String(index + 1).padStart(2, '0')}
+                  </span>
+                  <span className="font-medium text-[#032453]">{theme}</span>
+                </div>
+              );
+            })}
           </div>
         </div>
       </div>
