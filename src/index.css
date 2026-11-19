@@ -92,6 +92,58 @@
   will-change: transform;
 }
 
+@keyframes ctaShineSweep {
+  0% {
+    transform: translate3d(-140%, 0, 0) skewX(-22deg);
+  }
+  42%, 100% {
+    transform: translate3d(220%, 0, 0) skewX(-22deg);
+  }
+}
+
+.cta-shiny,
+.cta-shiny-light {
+  position: relative;
+  overflow: hidden;
+  isolation: isolate;
+}
+
+.cta-shiny::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  width: 55%;
+  pointer-events: none;
+  background: linear-gradient(
+    90deg,
+    transparent 0%,
+    rgba(254, 242, 235, 0.08) 25%,
+    rgba(246, 200, 110, 0.38) 50%,
+    rgba(254, 242, 235, 0.16) 72%,
+    transparent 100%
+  );
+  animation: ctaShineSweep 3.2s cubic-bezier(0.4, 0, 0.2, 1) infinite;
+  will-change: transform;
+}
+
+.cta-shiny-light::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  width: 55%;
+  pointer-events: none;
+  background: linear-gradient(
+    90deg,
+    transparent 0%,
+    rgba(199, 154, 80, 0.12) 25%,
+    rgba(255, 255, 255, 0.78) 50%,
+    rgba(199, 154, 80, 0.2) 72%,
+    transparent 100%
+  );
+  animation: ctaShineSweep 3.2s cubic-bezier(0.4, 0, 0.2, 1) infinite;
+  will-change: transform;
+}
+
 @media (prefers-reduced-motion: reduce) {
   html {
     scroll-behavior: auto;
@@ -99,7 +151,9 @@
 
   .cta-float-btn,
   .cta-sticky-btn,
-  .cta-arrow-glide {
+  .cta-arrow-glide,
+  .cta-shiny::before,
+  .cta-shiny-light::before {
     animation: none;
   }
 }

@@ -12,7 +12,7 @@ import { ApplicationToastPopup } from './components/ApplicationToastPopup';
 
 export default function App() {
   return (
-    <div className="min-h-screen bg-[#FEF2EB] text-[#252525]">
+    <div className="min-h-screen overflow-x-clip bg-[#FEF2EB] text-[#252525]">
       <main className="pb-20 md:pb-0">
         <HeroSection />
         <ProblemSection />

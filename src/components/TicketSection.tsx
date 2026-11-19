@@ -91,7 +91,7 @@ export const TicketSection: React.FC = () => {
               href={APPLICATION_FORM_LINK}
               target="_blank"
               rel="noopener noreferrer"
-              className="cta-float-btn inline-flex min-h-[54px] w-full items-center justify-center gap-3 rounded-lg bg-[#032453] px-6 py-4 text-center text-sm font-semibold tracking-[0.1em] text-[#FEF2EB] uppercase shadow-[0_14px_32px_-10px_rgba(3,36,83,0.45)] transition-colors duration-200 hover:bg-[#04306e] active:scale-[0.98] focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-[#DC7310] sm:text-base"
+              className="cta-float-btn cta-shiny inline-flex min-h-[54px] w-full items-center justify-center gap-3 rounded-lg border border-[#C79A50]/50 bg-[#032453] px-6 py-4 text-center text-sm font-semibold tracking-[0.1em] text-[#FEF2EB] uppercase shadow-[inset_0_1px_0_rgba(254,242,235,0.22),0_14px_32px_-10px_rgba(3,36,83,0.48)] transition-colors duration-200 hover:bg-[#04306e] active:scale-[0.98] focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-[#DC7310] sm:text-base"
             >
               <span>Apply Now</span>
               <ArrowRight className="cta-arrow-glide h-4 w-4 shrink-0 text-[#E8C7A5]" aria-hidden="true" />

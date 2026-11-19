@@ -117,6 +117,8 @@ export const HeroSection: React.FC = () => {
               <img
                 src={EVENT_BANNER_SRC}
                 alt="SAMBHAV 2027 — A Guided Journey to Design, Manifest and Achieve Your Dream Life in 2027 featuring Manifestation Coach Rahul Dongre and Mental Wellness Coach Deepanshu Bagde"
+                fetchPriority="high"
+                decoding="async"
                 referrerPolicy="no-referrer"
                 onError={() => setImageError(true)}
                 className="h-full w-full object-contain transition-transform duration-300 group-hover:scale-[1.015]"
@@ -169,7 +171,7 @@ export const HeroSection: React.FC = () => {
               href={APPLICATION_FORM_LINK}
               target="_blank"
               rel="noopener noreferrer"
-              className="cta-float-btn inline-flex min-h-[52px] items-center justify-center gap-3 rounded-lg bg-[#032453] px-7 py-4 text-center text-sm font-semibold tracking-[0.06em] text-[#FEF2EB] shadow-[0_14px_34px_-8px_rgba(3,36,83,0.5)] transition-colors duration-200 hover:bg-[#04306e] active:scale-[0.98] focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-[#DC7310] sm:px-9 sm:text-base"
+              className="cta-float-btn cta-shiny inline-flex min-h-[52px] items-center justify-center gap-3 rounded-lg border border-[#C79A50]/50 bg-[#032453] px-7 py-4 text-center text-sm font-semibold tracking-[0.06em] text-[#FEF2EB] shadow-[inset_0_1px_0_rgba(254,242,235,0.22),0_14px_34px_-8px_rgba(3,36,83,0.52)] transition-colors duration-200 hover:bg-[#04306e] active:scale-[0.98] focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-[#DC7310] sm:px-9 sm:text-base"
             >
               <span>I&apos;M READY FOR MY 2027 TRANSFORMATION</span>
               <ArrowRight className="cta-arrow-glide h-4 w-4 shrink-0 text-[#E8C7A5]" aria-hidden="true" />

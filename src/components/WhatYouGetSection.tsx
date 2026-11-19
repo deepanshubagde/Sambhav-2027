@@ -119,7 +119,7 @@ export const WhatYouGetSection: React.FC = () => {
               href={APPLICATION_FORM_LINK}
               target="_blank"
               rel="noopener noreferrer"
-              className="cta-float-btn inline-flex min-h-[52px] items-center justify-center gap-3 rounded-lg bg-[#FEF2EB] px-9 py-3.5 text-sm font-semibold tracking-[0.1em] text-[#032453] uppercase shadow-[0_14px_32px_-10px_rgba(0,0,0,0.45)] transition-colors duration-200 hover:bg-[#E8C7A5] active:scale-[0.98] focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-[#E8C7A5] sm:px-11 sm:text-base whitespace-nowrap"
+              className="cta-float-btn cta-shiny-light inline-flex min-h-[52px] items-center justify-center gap-3 rounded-lg border border-[#C79A50]/60 bg-[#FEF2EB] px-9 py-3.5 text-sm font-semibold tracking-[0.1em] text-[#032453] uppercase shadow-[inset_0_1px_0_rgba(255,255,255,0.85),0_14px_32px_-10px_rgba(0,0,0,0.45)] transition-colors duration-200 hover:bg-[#E8C7A5] active:scale-[0.98] focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-[#E8C7A5] sm:px-11 sm:text-base whitespace-nowrap"
             >
               <span>Apply Now</span>
               <ArrowRight className="cta-arrow-glide h-4 w-4 shrink-0 text-[#B35906]" aria-hidden="true" />
