@@ -1,9 +1,9 @@
 import React, { useState } from 'react';
-import { ArrowRight, Calendar, ClipboardCheck, Clock, MapPin } from 'lucide-react';
+import { ArrowRight, Calendar, Clock, MapPin } from 'lucide-react';
 import {
-  APPLICATION_FORM_LINK,
   EVENT_BANNER_SRC,
   EVENT_DETAILS,
+  PAYMENT_BOOKING_LINK,
 } from '../config/event';
 import { DhammachakraMotif } from './Motifs';
 
@@ -19,7 +19,7 @@ export const HeroSection: React.FC = () => {
   return (
     <section
       aria-label="SAMBHAV 2027 Hero"
-      className="relative overflow-hidden bg-[#FEF2EB] text-[#252525] pt-10 pb-16 sm:pt-14 sm:pb-24"
+      className="relative overflow-hidden bg-[#FEF2EB] text-[#252525] pt-8 pb-16 sm:pt-12 sm:pb-24"
     >
       {/* Subtle sunrise radial illumination */}
       <div
@@ -30,7 +30,7 @@ export const HeroSection: React.FC = () => {
       {/* Subtle architectural Dhammachakra accent */}
       <div
         aria-hidden="true"
-        className="pointer-events-none absolute left-1/2 top-6 -translate-x-1/2 text-[#C79A50]/20"
+        className="pointer-events-none absolute left-1/2 top-12 -translate-x-1/2 text-[#C79A50]/20"
       >
         <DhammachakraMotif className="h-32 w-32 sm:h-40 sm:w-40" />
       </div>
@@ -38,6 +38,22 @@ export const HeroSection: React.FC = () => {
       <div className="relative mx-auto max-w-5xl px-4 sm:px-6 lg:px-8">
         {/* Top Brand & Event Lockup */}
         <div className="mx-auto max-w-3xl text-center">
+          {/* Top Red Urgency Banner */}
+          <div className="mb-4">
+            <a
+              href={PAYMENT_BOOKING_LINK}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="inline-flex items-center justify-center gap-2 rounded-sm border border-[#991B1B] bg-[#DC2626] px-4 py-1.5 text-[11px] font-bold tracking-[0.2em] text-white uppercase shadow-[0_8px_22px_-6px_rgba(220,38,38,0.55)] touch-manipulation transition-colors hover:bg-[#B91C1C] sm:text-xs"
+            >
+              <span
+                aria-hidden="true"
+                className="h-1.5 w-1.5 rounded-full bg-white animate-pulse"
+              />
+              <span>Limited Seats Only</span>
+            </a>
+          </div>
+
           <p className="inline-flex items-center gap-3 text-xs font-semibold tracking-[0.22em] text-[#032453] uppercase">
             <span className="h-px w-6 bg-[#C79A50]" aria-hidden="true" />
             Monkhood Club Presents
@@ -71,7 +87,7 @@ export const HeroSection: React.FC = () => {
             Release Your Inner Blockers. Manifest the Life You Desire Through the Timeless Wisdom of Buddha.
           </p>
 
-          {/* Above-the-fold Event Info Strip */}
+          {/* Above-the-fold Event Info Strip (Date, Location, Timings only) */}
           <div className="mt-7 flex flex-wrap items-center justify-center gap-x-5 gap-y-2 border-y border-[#C79A50]/35 py-3 text-sm text-[#032453]">
             <span className="inline-flex items-center gap-2 font-medium whitespace-nowrap">
               <Calendar className="h-4 w-4 text-[#B35906]" aria-hidden="true" />
@@ -89,35 +105,18 @@ export const HeroSection: React.FC = () => {
             </span>
             <span className="inline-flex items-center gap-2 font-medium whitespace-nowrap">
               <Clock className="h-4 w-4 text-[#B35906]" aria-hidden="true" />
-              <span className="tabular-nums">{EVENT_DETAILS.timings}</span>
-            </span>
-            <span className="hidden text-[#C79A50] sm:inline" aria-hidden="true">
-              ·
-            </span>
-            <span className="inline-flex items-center gap-1.5 font-semibold whitespace-nowrap">
-              <ClipboardCheck className="h-4 w-4 text-[#B35906]" aria-hidden="true" />
-              <span>Entry: {EVENT_DETAILS.entryMode}</span>
-            </span>
-          </div>
-
-          <div className="mt-5">
-            <span className="inline-flex items-center gap-2 rounded-sm border border-[#991B1B] bg-[#DC2626] px-4 py-1.5 text-[11px] font-bold tracking-[0.22em] text-white uppercase shadow-[0_6px_18px_-6px_rgba(220,38,38,0.55)] sm:text-xs">
-              <span
-                aria-hidden="true"
-                className="h-1.5 w-1.5 rounded-full bg-white animate-pulse"
-              />
-              Limited Seats
+              <span className="tabular-nums">{EVENT_DETAILS.timings} (One Day Event)</span>
             </span>
           </div>
         </div>
 
-        {/* Prominent 16:9 Approved SAMBHAV 2027 Banner (Clickable to Application Form) */}
+        {/* Prominent 16:9 Approved SAMBHAV 2027 Banner (Clickable to Razorpay Booking) */}
         <div className="mt-6 sm:mt-8">
           <a
-            href={APPLICATION_FORM_LINK}
+            href={PAYMENT_BOOKING_LINK}
             target="_blank"
             rel="noopener noreferrer"
-            aria-label="Apply for SAMBHAV 2027 — Open application form"
+            aria-label="Book your seat for SAMBHAV 2027 — ₹999 all-inclusive"
             className="group relative mx-auto block aspect-video w-full cursor-pointer overflow-hidden rounded-xl border border-[#C79A50]/50 bg-[#FDF0F1] shadow-[0_24px_60px_-18px_rgba(3,36,83,0.18)] touch-manipulation transition-all duration-300 hover:border-[#C79A50] hover:shadow-[0_28px_68px_-16px_rgba(3,36,83,0.26)] active:scale-[0.99] focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-[#DC7310]"
           >
             {!imageError ? (
@@ -144,7 +143,7 @@ export const HeroSection: React.FC = () => {
           </a>
         </div>
 
-        {/* Supporting Narrative, 3 Pillars & Primary CTA */}
+        {/* Supporting Narrative, 3 Pillars & Primary Direct-Booking CTA */}
         <div className="mx-auto mt-10 max-w-3xl text-center">
           <div className="space-y-4 text-base leading-relaxed text-[#252525]/90 sm:text-lg">
             <p>
@@ -172,20 +171,27 @@ export const HeroSection: React.FC = () => {
             ))}
           </div>
 
-          {/* Primary CTA */}
+          {/* Primary Direct Booking CTA with Struck-Through ₹5,000 -> ₹999 */}
           <div className="mt-10 flex flex-col items-center">
             <a
-              href={APPLICATION_FORM_LINK}
+              href={PAYMENT_BOOKING_LINK}
               target="_blank"
               rel="noopener noreferrer"
-              className="cta-float-btn cta-shiny inline-flex min-h-[52px] items-center justify-center gap-3 rounded-lg border border-[#C79A50]/50 bg-[#032453] px-7 py-4 text-center text-sm font-semibold tracking-[0.06em] text-[#FEF2EB] shadow-[inset_0_1px_0_rgba(254,242,235,0.22),0_14px_34px_-8px_rgba(3,36,83,0.52)] transition-colors duration-200 hover:bg-[#04306e] active:scale-[0.98] focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-[#DC7310] sm:px-9 sm:text-base"
+              className="cta-float-btn cta-shiny inline-flex min-h-[54px] flex-wrap items-center justify-center gap-x-3 gap-y-1 rounded-lg border border-[#C79A50]/50 bg-[#032453] px-7 py-4 text-center text-sm font-semibold tracking-[0.06em] text-[#FEF2EB] shadow-[inset_0_1px_0_rgba(254,242,235,0.22),0_14px_34px_-8px_rgba(3,36,83,0.52)] transition-colors duration-200 hover:bg-[#04306e] active:scale-[0.98] focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-[#DC7310] sm:px-9 sm:text-base"
             >
-              <span>I&apos;M READY FOR MY 2027 TRANSFORMATION</span>
+              <span>BOOK YOUR SEAT NOW</span>
+              <span className="inline-flex items-center gap-1.5 rounded bg-[#FEF2EB]/12 px-2.5 py-0.5 text-xs font-bold sm:text-sm">
+                <span className="font-normal text-[#FEF2EB]/60 line-through tabular-nums">
+                  {EVENT_DETAILS.originalPrice}
+                </span>
+                <span className="text-[#F6C86E] tabular-nums">{EVENT_DETAILS.price}</span>
+              </span>
               <ArrowRight className="cta-arrow-glide h-4 w-4 shrink-0 text-[#E8C7A5]" aria-hidden="true" />
             </a>
 
-            <p className="mt-4 text-sm font-medium text-[#032453]/80">
-              An intimate, in-person experience. {EVENT_DETAILS.capacityDisplay}.
+            <p className="mt-4 text-sm font-medium text-[#032453]/85">
+              All-inclusive pass (Workbook, Resources, Lunch &amp; High Tea) ·{' '}
+              <span className="font-semibold text-[#B91C1C]">Limited seats only</span>
             </p>
           </div>
         </div>

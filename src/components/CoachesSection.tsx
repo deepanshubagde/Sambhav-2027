@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { APPLICATION_FORM_LINK, COACHES, EVENT_DETAILS } from '../config/event';
+import { COACHES, EVENT_DETAILS, PAYMENT_BOOKING_LINK } from '../config/event';
 import { DhammachakraMotif, LotusEmblem } from './Motifs';
 
 interface PortraitBackdropProps {
@@ -94,6 +94,53 @@ const CoachPortraitBackdrop: React.FC<PortraitBackdropProps> = ({ mirror = false
   </div>
 );
 
+/**
+ * Dignified waist-up editorial silhouette for the Surprise Guest, matching the
+ * exact sunrise arch & Dhammachakra halo backdrop of the other coach portraits.
+ */
+const MysteryGuestPortrait: React.FC = () => (
+  <div className="relative z-10 flex h-full w-full items-end justify-center">
+    <svg
+      viewBox="0 0 360 360"
+      fill="none"
+      xmlns="http://www.w3.org/2000/svg"
+      className="h-full w-full drop-shadow-[0_14px_26px_rgba(3,36,83,0.18)]"
+      aria-hidden="true"
+    >
+      <defs>
+        <linearGradient id="mysterySilhouette" x1="180" y1="68" x2="180" y2="360" gradientUnits="userSpaceOnUse">
+          <stop offset="0%" stopColor="#052E6B" />
+          <stop offset="55%" stopColor="#032453" />
+          <stop offset="100%" stopColor="#02193B" />
+        </linearGradient>
+        <linearGradient id="mysteryRim" x1="180" y1="64" x2="180" y2="300" gradientUnits="userSpaceOnUse">
+          <stop offset="0%" stopColor="#F6C86E" stopOpacity="0.85" />
+          <stop offset="100%" stopColor="#C79A50" stopOpacity="0.18" />
+        </linearGradient>
+      </defs>
+
+      {/* Waist-up speaker silhouette with subtle golden rim highlight */}
+      <path
+        d="M180 76C209 76 230 98 230 128C230 156 211 178 180 178C149 178 130 156 130 128C130 98 151 76 180 76Z"
+        fill="url(#mysterySilhouette)"
+        stroke="url(#mysteryRim)"
+        strokeWidth="1.4"
+      />
+      <path
+        d="M66 360C72 284 102 228 148 210C158 206 168 204 180 204C192 204 202 206 212 210C258 228 288 284 294 360H66Z"
+        fill="url(#mysterySilhouette)"
+        stroke="url(#mysteryRim)"
+        strokeWidth="1.4"
+      />
+    </svg>
+
+    {/* Subtle golden reveal ribbon */}
+    <span className="pointer-events-none absolute bottom-7 z-30 rounded-sm border border-[#C79A50]/75 bg-[#032453]/92 px-3.5 py-1 text-[10px] font-semibold tracking-[0.22em] text-[#F6C86E] uppercase shadow-sm">
+      Revealing Soon
+    </span>
+  </div>
+);
+
 export const CoachesSection: React.FC = () => {
   const [failedImages, setFailedImages] = useState<Record<string, boolean>>({});
 
@@ -102,7 +149,7 @@ export const CoachesSection: React.FC = () => {
       aria-label="Coaches and Guiding Philosophy"
       className="border-t border-[#C79A50]/30 bg-[#FDF0F1] py-20 text-[#252525] sm:py-24"
     >
-      <div className="mx-auto max-w-5xl px-5 sm:px-6 lg:px-8">
+      <div className="mx-auto max-w-6xl px-5 sm:px-6 lg:px-8">
         {/* Revered Buddha Quote on Mind & Manifestation */}
         <figure className="mx-auto mb-14 max-w-3xl rounded-2xl border border-[#C79A50]/40 bg-[#FEF2EB]/85 px-6 py-9 text-center sm:mb-16 sm:px-12 sm:py-11">
           <DhammachakraMotif className="mx-auto h-8 w-8 text-[#C79A50]" />
@@ -134,8 +181,8 @@ export const CoachesSection: React.FC = () => {
           </p>
         </div>
 
-        {/* Two Coach Cards with Sunrise Architectural Backdrop & Waist-Up Half Portraits */}
-        <div className="mx-auto mt-12 grid max-w-4xl grid-cols-1 gap-6 sm:grid-cols-2">
+        {/* Three Coach Cards (Rahul Dongre, Deepanshu Bagde & Surprise Guest) */}
+        <div className="mx-auto mt-12 grid max-w-5xl grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-3">
           {COACHES.map((coach, idx) => {
             const hasError = Boolean(failedImages[coach.name]);
 
@@ -144,17 +191,27 @@ export const CoachesSection: React.FC = () => {
                 key={coach.name}
                 className="flex flex-col overflow-hidden rounded-xl border border-[#C79A50]/45 bg-[#FEF2EB]"
               >
-                {/* Half-portrait frame (cropped cleanly to stomach level) with rich sunrise backdrop */}
+                {/* Half-portrait frame with rich sunrise backdrop */}
                 <a
-                  href={APPLICATION_FORM_LINK}
+                  href={PAYMENT_BOOKING_LINK}
                   target="_blank"
                   rel="noopener noreferrer"
-                  aria-label={`Apply for SAMBHAV 2027 with ${coach.name}`}
+                  aria-label={`Book your seat for SAMBHAV 2027 with ${coach.name}`}
                   className="group relative block aspect-square w-full cursor-pointer overflow-hidden border-b border-[#C79A50]/30 touch-manipulation focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#DC7310]"
                 >
                   <CoachPortraitBackdrop mirror={coach.position === 'right'} />
 
-                  {!hasError ? (
+                  {coach.isMystery ? (
+                    <>
+                      <div className="h-full w-full transition-transform duration-300 group-hover:scale-[1.02]">
+                        <MysteryGuestPortrait />
+                      </div>
+                      <div
+                        aria-hidden="true"
+                        className="pointer-events-none absolute inset-x-0 bottom-0 z-20 h-20 bg-gradient-to-t from-[#FEF2EB] via-[#FEF2EB]/55 to-transparent"
+                      />
+                    </>
+                  ) : !hasError && coach.photoSrc ? (
                     <>
                       <img
                         src={coach.photoSrc}
@@ -163,7 +220,9 @@ export const CoachesSection: React.FC = () => {
                         onError={() =>
                           setFailedImages((prev) => ({ ...prev, [coach.name]: true }))
                         }
-                        className={`relative z-10 h-full w-full object-cover transition-transform duration-300 group-hover:scale-[1.02] ${coach.photoPositionClass} ${
+                        className={`relative z-10 h-full w-full object-cover transition-transform duration-300 group-hover:scale-[1.02] ${
+                          coach.photoPositionClass ?? ''
+                        } ${
                           coach.blendWhiteBg
                             ? 'mix-blend-multiply'
                             : 'drop-shadow-[0_12px_24px_rgba(3,36,83,0.14)]'
@@ -186,22 +245,22 @@ export const CoachesSection: React.FC = () => {
                 </a>
 
                 {/* Coach Details Below Photo */}
-                <div className="flex flex-1 flex-col justify-between p-7 sm:p-8">
+                <div className="flex flex-1 flex-col justify-between p-6 sm:p-7">
                   <div>
-                    <div className="flex items-center justify-between border-b border-[#C79A50]/30 pb-4">
-                      <span className="text-xs font-semibold tracking-[0.2em] text-[#B35906] uppercase tabular-nums">
+                    <div className="flex items-center justify-between border-b border-[#C79A50]/30 pb-3.5">
+                      <span className="text-xs font-semibold tracking-[0.18em] text-[#B35906] uppercase tabular-nums">
                         0{idx + 1} · {coach.title}
                       </span>
-                      <LotusEmblem className="h-5 w-5 text-[#C79A50]" />
+                      <LotusEmblem className="h-4 w-4 shrink-0 text-[#C79A50]" />
                     </div>
 
-                    <h3 className="mt-5 font-serif text-3xl font-semibold text-[#032453]">
+                    <h3 className="mt-4 font-serif text-2xl font-semibold text-[#032453] sm:text-[1.75rem]">
                       {coach.name}
                     </h3>
                     <p className="mt-1 text-sm font-semibold tracking-wide text-[#6D8353]">
                       {coach.title}
                     </p>
-                    <p className="mt-4 text-sm leading-relaxed text-[#252525]/85 sm:text-base">
+                    <p className="mt-3.5 text-sm leading-relaxed text-[#252525]/85 sm:text-[15px]">
                       {coach.focus}
                     </p>
                   </div>

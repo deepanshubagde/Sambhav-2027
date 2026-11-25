@@ -7,6 +7,7 @@ import { SessionInclusionsSection } from './components/SessionInclusionsSection'
 import { CoachesSection } from './components/CoachesSection';
 import { TicketSection } from './components/TicketSection';
 import { FaqSection } from './components/FaqSection';
+import { SupportSection } from './components/SupportSection';
 import { MobileStickyCta } from './components/MobileStickyCta';
 import { ApplicationToastPopup } from './components/ApplicationToastPopup';
 
@@ -23,6 +24,7 @@ export default function App() {
         <CoachesSection />
         <TicketSection />
         <FaqSection />
+        <SupportSection />
       </main>
       <ApplicationToastPopup />
       <MobileStickyCta />

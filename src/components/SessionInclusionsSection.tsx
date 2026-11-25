@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { APPLICATION_FORM_LINK, SESSION_INCLUSIONS } from '../config/event';
+import { PAYMENT_BOOKING_LINK, SESSION_INCLUSIONS } from '../config/event';
 import { LotusEmblem } from './Motifs';
 
 export const SessionInclusionsSection: React.FC = () => {
@@ -43,10 +43,10 @@ export const SessionInclusionsSection: React.FC = () => {
                 className="flex flex-col overflow-hidden rounded-2xl border border-[#C79A50]/45 bg-[#FEF2EB] shadow-[0_20px_48px_-22px_rgba(3,36,83,0.16)]"
               >
                 <a
-                  href={APPLICATION_FORM_LINK}
+                  href={PAYMENT_BOOKING_LINK}
                   target="_blank"
                   rel="noopener noreferrer"
-                  aria-label={`Apply for SAMBHAV 2027 — ${item.title}`}
+                  aria-label={`Book your seat for SAMBHAV 2027 — ${item.title}`}
                   className="group relative block aspect-[4/3] w-full cursor-pointer overflow-hidden border-b border-[#C79A50]/30 bg-[#FDF0F1] touch-manipulation focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#DC7310]"
                 >
                   {!hasError ? (

@@ -10,7 +10,7 @@ import {
   Sun,
   X,
 } from 'lucide-react';
-import { APPLICATION_FORM_LINK } from '../config/event';
+import { PAYMENT_BOOKING_LINK } from '../config/event';
 
 type CardStyleVariant = 'navy-gold' | 'ivory-gold' | 'saffron-navy' | 'sage-ivory';
 
@@ -24,7 +24,7 @@ type IconKey =
   | 'compass'
   | 'sun';
 
-interface ApplicantNotification {
+interface BookingNotification {
   name: string;
   initials: string;
   action: string;
@@ -33,19 +33,19 @@ interface ApplicantNotification {
   icon: IconKey;
 }
 
-const APPLICANT_NOTIFICATIONS: ApplicantNotification[] = [
+const BOOKING_NOTIFICATIONS: BookingNotification[] = [
   {
     name: 'Abhinav',
     initials: 'AB',
-    action: 'submitted application',
-    quote: 'Consider me in.',
+    action: 'slot has been booked!',
+    quote: "Booked my seat! Can't wait.",
     variant: 'navy-gold',
-    icon: 'sparkles',
+    icon: 'check',
   },
   {
     name: 'Rajiv',
     initials: 'RJ',
-    action: 'applied for SAMBHAV',
+    action: 'just booked a slot!',
     quote: "I'm really excited for this event.",
     variant: 'ivory-gold',
     icon: 'flame',
@@ -53,15 +53,15 @@ const APPLICANT_NOTIFICATIONS: ApplicantNotification[] = [
   {
     name: 'Siddharth',
     initials: 'SD',
-    action: 'submitted application',
-    quote: 'I really wanted to get in.',
+    action: 'slot has been booked!',
+    quote: 'Locked in my 2027 seat!',
     variant: 'saffron-navy',
     icon: 'compass',
   },
   {
     name: 'Priya',
     initials: 'PR',
-    action: 'applied for this event',
+    action: 'just booked a slot!',
     quote: 'Thank you for bringing this opportunity.',
     variant: 'sage-ivory',
     icon: 'heart',
@@ -69,7 +69,7 @@ const APPLICANT_NOTIFICATIONS: ApplicantNotification[] = [
   {
     name: 'Rohan',
     initials: 'RO',
-    action: 'submitted application',
+    action: 'slot has been booked!',
     quote: 'Ready to transform my 2027.',
     variant: 'navy-gold',
     icon: 'sun',
@@ -77,7 +77,7 @@ const APPLICANT_NOTIFICATIONS: ApplicantNotification[] = [
   {
     name: 'Bodhi',
     initials: 'BD',
-    action: 'applied for SAMBHAV',
+    action: 'just booked a slot!',
     quote: 'Looking forward to this retreat.',
     variant: 'ivory-gold',
     icon: 'award',
@@ -85,31 +85,31 @@ const APPLICANT_NOTIFICATIONS: ApplicantNotification[] = [
   {
     name: 'Ananya',
     initials: 'AN',
-    action: 'submitted application',
-    quote: "Can't wait to join SAMBHAV.",
+    action: 'slot has been booked!',
+    quote: 'Got the ₹999 all-inclusive pass!',
     variant: 'saffron-navy',
     icon: 'star',
   },
   {
     name: 'Vikram',
     initials: 'VK',
-    action: 'applied for this event',
-    quote: 'Please consider me inside the event.',
+    action: 'just booked a slot!',
+    quote: 'Seat confirmed! See you in Nagpur.',
     variant: 'sage-ivory',
-    icon: 'check',
+    icon: 'sparkles',
   },
   {
     name: 'Neha',
     initials: 'NH',
-    action: 'submitted application',
-    quote: 'Hoping to get selected for this.',
+    action: 'slot has been booked!',
+    quote: 'So glad I booked in time.',
     variant: 'navy-gold',
     icon: 'heart',
   },
   {
     name: 'Tathagat',
     initials: 'TG',
-    action: 'applied for SAMBHAV',
+    action: 'just booked a slot!',
     quote: 'Grateful for this event in Nagpur.',
     variant: 'ivory-gold',
     icon: 'sun',
@@ -117,7 +117,7 @@ const APPLICANT_NOTIFICATIONS: ApplicantNotification[] = [
   {
     name: 'Aditya',
     initials: 'AD',
-    action: 'submitted application',
+    action: 'slot has been booked!',
     quote: 'Ready to break my limits in 2027.',
     variant: 'saffron-navy',
     icon: 'flame',
@@ -125,7 +125,7 @@ const APPLICANT_NOTIFICATIONS: ApplicantNotification[] = [
   {
     name: 'Sneha',
     initials: 'SN',
-    action: 'applied for this event',
+    action: 'just booked a slot!',
     quote: 'Count me in for this journey.',
     variant: 'sage-ivory',
     icon: 'sparkles',
@@ -133,7 +133,7 @@ const APPLICANT_NOTIFICATIONS: ApplicantNotification[] = [
   {
     name: 'Karan',
     initials: 'KR',
-    action: 'submitted application',
+    action: 'slot has been booked!',
     quote: 'Excited to learn in person.',
     variant: 'navy-gold',
     icon: 'compass',
@@ -141,7 +141,7 @@ const APPLICANT_NOTIFICATIONS: ApplicantNotification[] = [
   {
     name: 'Pooja',
     initials: 'PJ',
-    action: 'applied for SAMBHAV',
+    action: 'just booked a slot!',
     quote: 'Exactly what I needed for 2027.',
     variant: 'ivory-gold',
     icon: 'star',
@@ -149,8 +149,8 @@ const APPLICANT_NOTIFICATIONS: ApplicantNotification[] = [
   {
     name: 'Nikhil',
     initials: 'NK',
-    action: 'submitted application',
-    quote: 'Applied! Fingers crossed.',
+    action: 'slot has been booked!',
+    quote: 'Booked for me and my friend!',
     variant: 'saffron-navy',
     icon: 'check',
   },
@@ -253,7 +253,7 @@ export const ApplicationToastPopup: React.FC = () => {
       showCurrentAndScheduleHide();
 
       intervalId = window.setInterval(() => {
-        setCurrentIndex((prev) => (prev + 1) % APPLICANT_NOTIFICATIONS.length);
+        setCurrentIndex((prev) => (prev + 1) % BOOKING_NOTIFICATIONS.length);
         showCurrentAndScheduleHide();
       }, POPUP_INTERVAL_MS);
     }, INITIAL_DELAY_MS);
@@ -265,7 +265,7 @@ export const ApplicationToastPopup: React.FC = () => {
     };
   }, []);
 
-  const current = APPLICANT_NOTIFICATIONS[currentIndex];
+  const current = BOOKING_NOTIFICATIONS[currentIndex];
   const theme = VARIANT_CLASSES[current.variant];
 
   return (
@@ -273,7 +273,7 @@ export const ApplicationToastPopup: React.FC = () => {
       role="status"
       aria-live="polite"
       aria-atomic="true"
-      className={`fixed bottom-[70px] left-2.5 z-50 w-fit max-w-[238px] transition-all duration-500 ease-out sm:left-4 sm:max-w-[300px] md:bottom-5 md:left-5 ${
+      className={`fixed bottom-[70px] left-2.5 z-50 w-fit max-w-[242px] transition-all duration-500 ease-out sm:left-4 sm:max-w-[300px] md:bottom-5 md:left-5 ${
         isVisible
           ? 'pointer-events-auto translate-y-0 opacity-100'
           : 'pointer-events-none translate-y-3 opacity-0'
@@ -283,7 +283,7 @@ export const ApplicationToastPopup: React.FC = () => {
         className={`relative flex items-center gap-2.5 rounded-xl border py-2 pl-2.5 pr-7 sm:gap-3 sm:rounded-2xl sm:border-[1.5px] sm:py-2.5 sm:pl-3 sm:pr-8 ${theme.card}`}
       >
         <a
-          href={APPLICATION_FORM_LINK}
+          href={PAYMENT_BOOKING_LINK}
           target="_blank"
           rel="noopener noreferrer"
           tabIndex={isVisible ? 0 : -1}

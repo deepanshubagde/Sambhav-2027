@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { ArrowRight } from 'lucide-react';
-import { APPLICATION_FORM_LINK, SAMBHAV_RESOURCES } from '../config/event';
+import { EVENT_DETAILS, PAYMENT_BOOKING_LINK, SAMBHAV_RESOURCES } from '../config/event';
 import { DhammachakraMotif, LotusEmblem, StupaHorizonDivider } from './Motifs';
 
 const FallbackVisual: React.FC<{ title: string }> = ({ title }) => (
@@ -63,10 +63,10 @@ export const WhatYouGetSection: React.FC = () => {
               }`}
             >
               <a
-                href={APPLICATION_FORM_LINK}
+                href={PAYMENT_BOOKING_LINK}
                 target="_blank"
                 rel="noopener noreferrer"
-                aria-label={`Apply for SAMBHAV 2027 — ${item.title}`}
+                aria-label={`Book your seat for SAMBHAV 2027 — ${item.title}`}
                 className="group relative block aspect-[4/3] w-full cursor-pointer overflow-hidden border-b border-[#C79A50]/30 bg-[#FDF0F1] touch-manipulation focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#E8C7A5]"
               >
                 {!failedImages[item.id] ? (
@@ -116,14 +116,23 @@ export const WhatYouGetSection: React.FC = () => {
 
           <div className="mt-9 flex flex-col items-center">
             <a
-              href={APPLICATION_FORM_LINK}
+              href={PAYMENT_BOOKING_LINK}
               target="_blank"
               rel="noopener noreferrer"
-              className="cta-float-btn cta-shiny-light inline-flex min-h-[52px] items-center justify-center gap-3 rounded-lg border border-[#C79A50]/60 bg-[#FEF2EB] px-9 py-3.5 text-sm font-semibold tracking-[0.1em] text-[#032453] uppercase shadow-[inset_0_1px_0_rgba(255,255,255,0.85),0_14px_32px_-10px_rgba(0,0,0,0.45)] transition-colors duration-200 hover:bg-[#E8C7A5] active:scale-[0.98] focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-[#E8C7A5] sm:px-11 sm:text-base whitespace-nowrap"
+              className="cta-float-btn cta-shiny-light inline-flex min-h-[54px] flex-wrap items-center justify-center gap-x-3 gap-y-1 rounded-lg border border-[#C79A50]/60 bg-[#FEF2EB] px-8 py-3.5 text-sm font-semibold tracking-[0.08em] text-[#032453] uppercase shadow-[inset_0_1px_0_rgba(255,255,255,0.85),0_14px_32px_-10px_rgba(0,0,0,0.45)] transition-colors duration-200 hover:bg-[#E8C7A5] active:scale-[0.98] focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-[#E8C7A5] sm:px-10 sm:text-base"
             >
-              <span>Apply Now</span>
+              <span>Book Your Seat Now</span>
+              <span className="inline-flex items-center gap-1.5 rounded bg-[#032453]/10 px-2.5 py-0.5 text-xs font-bold sm:text-sm">
+                <span className="font-normal text-[#032453]/50 line-through tabular-nums">
+                  {EVENT_DETAILS.originalPrice}
+                </span>
+                <span className="text-[#B35906] tabular-nums">{EVENT_DETAILS.price}</span>
+              </span>
               <ArrowRight className="cta-arrow-glide h-4 w-4 shrink-0 text-[#B35906]" aria-hidden="true" />
             </a>
+            <p className="mt-3 text-xs font-medium text-[#E8C7A5]/90 sm:text-sm">
+              All 6 resources above included in your {EVENT_DETAILS.price} pass.
+            </p>
           </div>
         </div>
       </div>
