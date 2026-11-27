@@ -1,8 +1,8 @@
 /**
- * SINGLE SOURCE OF TRUTH FOR EVENT & DIRECT BOOKING CONFIGURATION
+ * SINGLE SOURCE OF TRUTH FOR EVENT & APPLICATION CONFIGURATION
  *
  * Every primary CTA button, clickable photo, and notification popup on the
- * landing page redirects directly to PAYMENT_BOOKING_LINK (Razorpay).
+ * landing page redirects directly to APPLICATION_FORM_LINK.
  */
 import buddhaGoldenImg from '../assets/images/buddha_golden_meditation_1795042248377.jpg';
 import manifestationWorkbookImg from '../assets/images/sambhav_manifestation_workbook_1795083689621.jpg';
@@ -14,7 +14,7 @@ import guidedVisualizationImg from '../assets/images/sambhav_guided_visualizatio
 import sessionLunchImg from '../assets/images/sambhav_event_lunch_1795084174882.jpg';
 import sessionHighTeaImg from '../assets/images/sambhav_event_high_tea_1795084173006.jpg';
 
-export const PAYMENT_BOOKING_LINK = 'https://rzp.io/rzp/sambhav-event';
+export const APPLICATION_FORM_LINK = 'https://sambhav-2027-application-form.ai.studio';
 
 export const EVENT_BANNER_SRC =
   '/assets/aistudio/Sambhav_2027__A_Guided_Journey_5822a75f.png';
@@ -34,11 +34,9 @@ export const EVENT_DETAILS = {
   locationShort: 'Nagpur',
   locationFull: 'Nagpur, Maharashtra, India',
   venueNote:
-    'The exact venue address in Nagpur will be shared directly upon seat confirmation.',
-  originalPrice: '₹5,000',
-  price: '₹999',
-  priceInclusionsNote:
-    'All-inclusive pass · Workbook, Vision Board Kit, Guided Audios, Lunch & High Tea',
+    'The exact venue address in Nagpur will be shared directly with confirmed participants.',
+  entryMode: 'Application Based',
+  entrySubtext: 'Selection-based · Offline, in-person experience',
   capacityDisplay: 'Limited seats only',
   formatDisplay: 'Offline, in-person experience',
   supportPhone: '9545205982',

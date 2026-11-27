@@ -22,49 +22,49 @@ const FAQ_ITEMS: FaqItem[] = [
     number: '02',
     question: 'When and where will the event take place?',
     answer:
-      'The event will take place on 12 December 2026, from 10:00 AM to 5:00 PM, in Nagpur, Maharashtra. The exact venue address will be shared with confirmed participants right after booking.',
+      'The event will take place on 12 December 2026, from 10:00 AM to 5:00 PM, in Nagpur, Maharashtra. The exact venue address will be shared with confirmed participants.',
   },
   {
     id: 'faq-3',
     number: '03',
-    question: 'Who can join SAMBHAV 2027?',
+    question: 'Who can apply for SAMBHAV 2027?',
     answer:
-      'Anyone aged 16 years and above who is interested in personal growth and transformation can book their seat. Beginners are welcome; no prior experience is required.',
+      'Anyone aged 16 years and above who is interested in personal growth and transformation can apply. Beginners are welcome; no prior experience is required.',
   },
   {
     id: 'faq-4',
     number: '04',
-    question: 'How can I book my seat for SAMBHAV 2027?',
+    question: 'How can I participate in SAMBHAV 2027?',
     answer:
-      'Simply click on Book Your Seat Now, complete your ₹999 payment securely through Razorpay, and your seat is confirmed immediately. You will receive your confirmation and venue updates directly.',
+      'Click on Apply Now, complete the application form and submit your responses. Our team will review your application and personally contact selected applicants.',
   },
   {
     id: 'faq-5',
     number: '05',
-    question: 'Is my seat confirmed immediately after payment?',
+    question: 'Does submitting the application confirm my participation?',
     answer:
-      'Yes! As soon as you complete the ₹999 payment on Razorpay, your seat is instantly confirmed. Our team will share the venue details and event instructions with you ahead of the retreat.',
+      'No. Participation is selection-based. Only selected applicants will receive a personal call with further details. Your participation is confirmed after completing the payment process.',
   },
   {
     id: 'faq-6',
     number: '06',
-    question: 'What is the ticket price and what is included?',
+    question: 'What is the participation fee?',
     answer:
-      'While the actual fee is ₹5,000, you can currently book your seat at a special all-inclusive price of ₹999. This includes full access to the 1-day retreat, the SAMBHAV 2027 Manifestation Workbook, Personal Notepad, Vision Board Cutouts, Personalized Vision Board Draft, Guided Meditation & Visualization Audios, Lunch, and High Tea.',
+      'The participation details will be shared personally during the selection call. If selected, our team will guide you through the payment process.',
   },
   {
     id: 'faq-7',
     number: '07',
     question: 'Can I bring my friends or family members?',
     answer:
-      'Absolutely! Your friends and family members are welcome to join you. Each participant simply needs to book their seat through the Razorpay link while seats are still available.',
+      'Absolutely! You can encourage your friends and family members to apply as well. Each person must submit a separate application and go through the selection process.',
   },
   {
     id: 'faq-8',
     number: '08',
     question: 'Will food and refreshments be provided?',
     answer:
-      'Yes! Lunch, high tea and drinking water are completely included in your ₹999 all-inclusive pass.',
+      'Yes! Lunch, high tea and refreshments will be provided. Drinking water and refreshments will also be available throughout the event.',
   },
   {
     id: 'faq-9',
@@ -83,9 +83,9 @@ const FAQ_ITEMS: FaqItem[] = [
   {
     id: 'faq-11',
     number: '11',
-    question: 'Can I cancel or transfer my booking?',
+    question: 'Can I cancel or transfer my participation?',
     answer:
-      'Ticket fees are non-refundable. However, you can request a seat transfer to another person at least 7 days before the event by contacting our team.',
+      'Participation fees are non-refundable. However, you can request a transfer to another person at least 7 days before the event by contacting our team.',
   },
   {
     id: 'faq-12',
@@ -127,7 +127,7 @@ export const FaqSection: React.FC = () => {
           </h2>
 
           <p className="mt-3 font-serif text-lg italic text-[#032453]/85 sm:text-xl">
-            Everything you need to know before booking your seat for SAMBHAV 2027.
+            Everything you need to know before applying for SAMBHAV 2027.
           </p>
         </div>
 

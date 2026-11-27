@@ -78,12 +78,13 @@ export const SupportSection: React.FC = () => {
           </p>
 
           <h2 className="mt-2.5 font-serif text-[clamp(1.9rem,3.8vw,2.85rem)] font-semibold leading-[1.15] text-[#FEF2EB]">
-            Have Any Queries About Your Booking?
+            Have Any Queries About Your Application?
           </h2>
 
           <p className="mt-3.5 text-sm leading-relaxed text-[#FEF2EB]/85 sm:text-base">
-            If you have any questions regarding seat booking, payment, or the SAMBHAV 2027
-            retreat, reach out to our team directly by phone, WhatsApp, or email.
+            If you have any questions regarding your application, the selection process, or
+            the SAMBHAV 2027 retreat, reach out to our team directly by phone, WhatsApp, or
+            email.
           </p>
         </div>
 

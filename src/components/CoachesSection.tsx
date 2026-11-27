@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { COACHES, EVENT_DETAILS, PAYMENT_BOOKING_LINK } from '../config/event';
+import { APPLICATION_FORM_LINK, COACHES, EVENT_DETAILS } from '../config/event';
 import { DhammachakraMotif, LotusEmblem } from './Motifs';
 
 interface PortraitBackdropProps {
@@ -193,10 +193,10 @@ export const CoachesSection: React.FC = () => {
               >
                 {/* Half-portrait frame with rich sunrise backdrop */}
                 <a
-                  href={PAYMENT_BOOKING_LINK}
+                  href={APPLICATION_FORM_LINK}
                   target="_blank"
                   rel="noopener noreferrer"
-                  aria-label={`Book your seat for SAMBHAV 2027 with ${coach.name}`}
+                  aria-label={`Apply for SAMBHAV 2027 with ${coach.name}`}
                   className="group relative block aspect-square w-full cursor-pointer overflow-hidden border-b border-[#C79A50]/30 touch-manipulation focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#DC7310]"
                 >
                   <CoachPortraitBackdrop mirror={coach.position === 'right'} />
